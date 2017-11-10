@@ -1,0 +1,32 @@
+<div class="row">
+        <div class="col s6 offset-s3">
+            <form name="fMap">
+                <input type="text" name="longitude" id="longitude" ng-model="rech.lon">
+                <label for="longitude">Longitude</label>
+                <input type="text" name="latitude" id="latitude" ng-model="rech.lat">
+                <label for="latitude">Latitude</label>
+            </form>
+            <div class="center"><button class="btn" ng-click="rechercherMap(rech);showMap()">Rechercher</button></div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="ville" ng-if="visibilityZip">
+                La ville recherchée est : {{res.name}} {{res.sys.country}}<br> 
+                <img ng-src="http://openweathermap.org/img/w/{{res.weather[0].icon}}.png"  alt=""><br>
+                <hr>
+                <span class="left"> T° : {{res.main.temp}}° </span> 
+                <span class="right"> Pression : {{res.main.pressure}} hPa</span> <br>
+                <span class="left">Humidité : {{res.main.humidity}}%</span><br>
+                <hr>
+                <span class="left"> V Vent : {{res.wind.speed}} m/s</span>
+                <span class="right">Deg Vent : {{res.wind.deg}}°</span> <br>
+                <hr>
+                <span class="left">Nuage : {{res.clouds.all}}%</span><br>
+                <hr>
+                <span class="left">Levé : {{res.sys.sunrise*1000 | date:'H:mm:ss'}}</span>
+                <span class="right">Couché : {{res.sys.sunset*1000 | date:'H:mm:ss'}}</span> <br>
+            </div>
+        </div>
+    </div>

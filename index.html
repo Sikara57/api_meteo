@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+    <title>Index</title>
+    
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper grey">
+            <a href="#" class="brand-logo left"><i class="material-icons">wb_sunny</i>Meteo</a>
+            <ul id="nav-mobile" class="right">
+            <li><a href="#!/city">Ville</a></li>
+            <li><a href="#!/map">Coordonnées</a></li>
+            <li><a href="#!/zip">Code Postal</a></li>
+            </ul>
+        </div>
+    </nav>
+	<div ng-app="myApp">
+		<div ng-view></div>
+	</div>
+	<script src="./myApp.js"></script>
+	<script src="./ctrl/home.ctrl.js"></script>
+	<script src="./ctrl/city.ctrl.js"></script>
+	<script src="./ctrl/map.ctrl.js"></script>
+	<script src="./ctrl/zip.ctrl.js"></script>
+    <script src="./service/cityService.js"></script>
+    <script src="./service/mapService.js"></script>
+    <script src="./service/zipService.js"></script>
+</body>
+</html>
